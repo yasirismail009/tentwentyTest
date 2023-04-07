@@ -4,9 +4,9 @@ export default function Cards(props) {
   const { cardData, currentSlide, dataKey } = props;
   console.log(dataKey);
   return (
-    <div className="carosal_card" style={{transform: cardData.rotate==="left"?"rotateY(0deg) rotate(0deg)": cardData.rotate==="right"?"rotateY(0deg) rotate(0deg)":"rotateY(0deg) rotate(0deg)"}}>
+    <div className="carosal_card" style={{transform: currentSlide<dataKey?"rotateY(0deg) rotate(30deg)":currentSlide>dataKey?"rotateY(0deg) rotate(-30deg)":"rotateY(0deg) rotate(0deg)"}}>
       <div>
-        <img className="carosal_img" src={cardData?.url} alt="img1"  />
+        <img className="carosal_img" style={{borderRadius:"10px"}} src={cardData?.url} alt="img1"  />
       </div>
       {currentSlide===dataKey ? (
         <div className="crosal_card_data">
